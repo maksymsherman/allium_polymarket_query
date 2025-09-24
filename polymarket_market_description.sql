@@ -111,6 +111,7 @@ negrisk_bridge AS (
     l.name,
     l.transaction_hash,
     l.params,
+    -- Need to use "params_keys_mapping" below. E.g., l.params[l.params_keys_mapping[0]]::STRING as first_param
     l.params:marketId::STRING as market_id,
     l.params:questionId::STRING as question_id,
     l.params:index::NUMBER as question_index,
